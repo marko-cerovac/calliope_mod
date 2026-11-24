@@ -1,5 +1,9 @@
 # Calliope
 
+Forked from [asterism0s/calliope](https://github.com/asterism0s/calliope) and modified for my own taste. Please use and contribute to the wonderful original theme.
+
+---
+
 An editorial theme for [Obsidian](https://obsidian.md). Cream paper and ink in light mode, paper by candlelight in dark mode, with typography borrowed from books and magazines.
 
 ![Calliope theme screenshot](calliope-preview.webp)
