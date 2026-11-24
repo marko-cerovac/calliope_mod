@@ -57,7 +57,6 @@ body {
   --blockquote-font-style: italic;
   --blockquote-color: var(--text-muted);
 
-  --calliope-code-border: color-mix(in srgb, var(--text-faint) 30%, transparent);
   --calliope-dot-color: color-mix(in srgb, var(--text-faint) 18%, transparent);
 
   /*
@@ -70,23 +69,15 @@ body {
   --calliope-icon-folder-open: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2'/%3E%3C/svg%3E");
   --calliope-icon-file: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z'/%3E%3Cpath d='M14 2v4a2 2 0 0 0 2 2h4'/%3E%3C/svg%3E");
 
-  /* Six folder colors, applied in sequence */
-  --calliope-folder-1: hsl(8, 55%, var(--calliope-icon-l));    /* terracotta */
-  --calliope-folder-2: hsl(30, 60%, var(--calliope-icon-l));   /* orange */
-  --calliope-folder-3: hsl(45, 55%, var(--calliope-icon-l));   /* ochre */
-  --calliope-folder-4: hsl(95, 30%, var(--calliope-icon-l));   /* olive */
-  --calliope-folder-5: hsl(185, 30%, var(--calliope-icon-l));  /* teal */
-  --calliope-folder-6: hsl(330, 35%, var(--calliope-icon-l));  /* plum */
-
   /* Active tab title in the accent color, focused or not */
-  --tab-text-color-active: var(--color-accent);
-  --tab-text-color-focused-active: var(--color-accent);
-  --tab-text-color-focused-active-current: var(--color-accent);
+  --tab-text-color-active: var(--h1-color);
+  --tab-text-color-focused-active: var(--h1-color);
+  --tab-text-color-focused-active-current: var(--h1-color);
 
   /* Mermaid diagrams */
   --calliope-diagram-node-bg: var(--background-secondary);
   --calliope-diagram-node-border: var(--text-faint);
-  --calliope-diagram-decision-border: var(--color-accent);
+  --calliope-diagram-decision-border: var(--h2-color);
   --calliope-diagram-line: var(--text-muted);
   --calliope-diagram-text: var(--text-normal);
   --calliope-diagram-label-bg: var(--background-primary);
@@ -119,11 +110,43 @@ body {
   --hr-color: #D8CDBE;
 
    
-  --h1-color: #5A2E1E;             
-  --h2-color: var(--color-accent); 
-  --h3-color: #6B6A3A;
+  --h1-color: #372b20;
+  --h2-color: #793e35;
+  --h3-color: #8b6641;
+  --h4-color: #80824a;
+  --h5-color: #4d673c;
+  --h6-color: #405951;
 
-  --calliope-icon-l: 45%; /* lightness of the folder colors */
+  /* Six folder colors, applied in sequence (they follow the heading colors) */
+  --calliope-folder-1: var(--h1-color);
+  --calliope-folder-2: var(--h2-color);
+  --calliope-folder-3: var(--h3-color);
+  --calliope-folder-4: var(--h4-color);
+  --calliope-folder-5: var(--h5-color);
+  --calliope-folder-6: var(--h6-color);
+
+  /* Code syntax colors, from the heading palette (comments keep the default) */
+  --code-keyword: var(--h2-color);
+  --code-tag: var(--h2-color);
+  --code-function: var(--h6-color);
+  --code-property: var(--h4-color);
+  --code-string: var(--h5-color);
+  --code-value: var(--h6-color);
+  --code-important: var(--h1-color);
+
+  /* Links in the heading 6 color */
+  --link-color: var(--h6-color);
+  --link-color-hover: var(--h6-color);
+  --link-external-color: var(--h6-color);
+  --link-external-color-hover: var(--h6-color);
+
+  /* Tags in the heading 5 color */
+  --tag-color: var(--h5-color);
+  --tag-color-hover: var(--h5-color);
+  --tag-background: color-mix(in srgb, var(--tag-color) 10%, transparent);
+  --tag-background-hover: color-mix(in srgb, var(--tag-color) 20%, transparent);
+  --tag-border-color: color-mix(in srgb, var(--tag-color) 15%, transparent);
+  --tag-border-color-hover: color-mix(in srgb, var(--tag-color) 15%, transparent);
   --calliope-diagram-label-bg: #f6f2eb; /* Mermaid edge labels */
   --calliope-diagram-node-bg: transparent; /* Mermaid nodes: no fill in dark mode */
 
@@ -155,11 +178,43 @@ body {
   --hr-color: #3E3934;
 
   
-  --h1-color: #E5BB68;              
-  --h2-color: var(--color-accent);  
-  --h3-color: #B8B67E;
+  --h1-color: #cbaf9f;
+  --h2-color: #ae6f65;
+  --h3-color: #b99674;
+  --h4-color: #bdae7f;
+  --h5-color: #a7c195;
+  --h6-color: #95bba5;
   
-  --calliope-icon-l: 65%; /* lightness of the folder colors */
+  /* Six folder colors, applied in sequence (they follow the heading colors) */
+  --calliope-folder-1: var(--h1-color);
+  --calliope-folder-2: var(--h2-color);
+  --calliope-folder-3: var(--h3-color);
+  --calliope-folder-4: var(--h4-color);
+  --calliope-folder-5: var(--h5-color);
+  --calliope-folder-6: var(--h6-color);
+
+  /* Code syntax colors, from the heading palette (comments keep the default) */
+  --code-keyword: var(--h2-color);
+  --code-tag: var(--h2-color);
+  --code-function: var(--h6-color);
+  --code-property: var(--h4-color);
+  --code-string: var(--h5-color);
+  --code-value: var(--h6-color);
+  --code-important: var(--h1-color);
+
+  /* Links in the heading 6 color */
+  --link-color: var(--h6-color);
+  --link-color-hover: var(--h6-color);
+  --link-external-color: var(--h6-color);
+  --link-external-color-hover: var(--h6-color);
+
+  /* Tags in the heading 5 color */
+  --tag-color: var(--h5-color);
+  --tag-color-hover: var(--h5-color);
+  --tag-background: color-mix(in srgb, var(--tag-color) 10%, transparent);
+  --tag-background-hover: color-mix(in srgb, var(--tag-color) 20%, transparent);
+  --tag-border-color: color-mix(in srgb, var(--tag-color) 15%, transparent);
+  --tag-border-color-hover: color-mix(in srgb, var(--tag-color) 15%, transparent);
   --calliope-diagram-label-bg: #2d2a27; /* Mermaid edge labels */
   --calliope-diagram-node-bg: transparent; /* Mermaid nodes: no fill in dark mode */
 
@@ -173,8 +228,10 @@ body {
 .HyperMD-header-4, .HyperMD-header-5, .HyperMD-header-6 {
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--text-muted);
+  color: var(--h4-color);
 }
+.markdown-rendered h5, .HyperMD-header-5 { color: var(--h5-color); }
+.markdown-rendered h6, .HyperMD-header-6 { color: var(--h6-color); }
 
 /* Spacing between a heading and the text right below it */
 /* Reading view: heading margin */
@@ -199,7 +256,7 @@ body {
   border-bottom: 1px solid var(--hr-color);
 }
 
-/* Links: accent color with a thin, offset underline */
+/* Links: heading 6 color with a thin, offset underline */
 .markdown-rendered a,
 .cm-s-obsidian .cm-hmd-internal-link,
 .cm-s-obsidian .cm-link {
@@ -281,29 +338,26 @@ body {
   background-repeat: repeat;
 }
 
-/* Code blocks: dashed border + dot pattern */
+/* Variables in code: same color as regular code text */
+.markdown-rendered .token.variable,
+.cm-s-obsidian .cm-variable,
+.cm-s-obsidian .cm-variable-2,
+.cm-s-obsidian .cm-variable-3 {
+  color: var(--code-normal);
+}
+
+/* Code blocks: no border, square corners */
 
 /* Reading view */
 .markdown-rendered pre {
-  border: 1.5px dashed var(--calliope-code-border);
-  background-image: radial-gradient(circle, var(--calliope-dot-color) 1px, transparent 1.5px);
-  background-size: 10px 10px; /* fallback where the lh unit is unsupported */
-  background-size: 0.5lh 0.5lh;
+  border: none;
+  border-radius: 0;
 }
 
 /* Live Preview: each code line is a separate element */
 .markdown-source-view.mod-cm6.is-live-preview .cm-line.HyperMD-codeblock {
-  border-left: 1.5px dashed var(--calliope-code-border);
-  border-right: 1.5px dashed var(--calliope-code-border);
-  background-image: radial-gradient(circle, var(--calliope-dot-color) 1px, transparent 1.5px);
-  background-size: 10px 10px; /* fallback where the lh unit is unsupported */
-  background-size: 0.5lh 0.5lh;
-}
-.markdown-source-view.mod-cm6.is-live-preview .cm-line.HyperMD-codeblock-begin {
-  border-top: 1.5px dashed var(--calliope-code-border);
-}
-.markdown-source-view.mod-cm6.is-live-preview .cm-line.HyperMD-codeblock-end {
-  border-bottom: 1.5px dashed var(--calliope-code-border);
+  border: none;
+  border-radius: 0;
 }
 
 /* Remove the callout hover outline in Live Preview */
